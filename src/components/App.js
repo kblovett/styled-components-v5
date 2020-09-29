@@ -21,6 +21,7 @@ function App() {
       <Button>Primary</Button>
       <Button secondary>Secondary</Button>
       <Button disabled>Disabled</Button>
+      <Button size={'large'}>Large</Button>
     </Fragment>
   );
 }

@@ -1,18 +1,34 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
+  ${(props) =>
+    props.secondary
+      ? css`
+          color: white;
+          background: black;
+        `
+      : css`
+          color: black;
+          background: #f8049c;
+        `}
   ${(props) => {
-    if (props.secondary) {
-      return { color: 'white', background: 'black' };
+    if (props.size === 'large') {
+      return css`
+        background: red;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.5em;
+      `;
     } else {
-      return { color: 'black', background: '#f8049c' };
+      return css`
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 1em;
+      `;
     }
   }}
   font-weight: bold;
-  padding: 8px;
-  border-radius: 4px;
   box-shadow: none;
-  font-size: 1em;
   border: none;
   width: 100%;
   display: block;
