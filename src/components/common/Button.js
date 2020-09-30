@@ -5,16 +5,15 @@ const Button = styled.button`
     props.secondary
       ? css`
           color: white;
-          background: black;
+          background: #fdd54f;
         `
       : css`
-          color: black;
+          color: white;
           background: #f8049c;
         `}
   ${(props) => {
     if (props.size === 'large') {
       return css`
-        background: red;
         padding: 10px;
         border-radius: 5px;
         font-size: 1.5em;
