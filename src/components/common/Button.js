@@ -5,11 +5,11 @@ const Button = styled.button`
     props.secondary
       ? css`
           color: white;
-          background: #fdd54f;
+          background: ${(p) => p.theme.secondaryColor};
         `
       : css`
           color: white;
-          background: #f8049c;
+          background: ${(p) => p.theme.primaryColor};
         `}
   ${(props) => {
     if (props.size === 'large') {

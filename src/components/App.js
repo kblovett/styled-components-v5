@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import Home from 'components/pages/Home';
 import Login from 'components/pages/Login';
@@ -16,9 +16,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const theme = {
+  primaryColor: '#f8049c',
+  secondaryColor: '#fdd54f',
+};
+
 function App() {
   return (
-    <Fragment>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Switch>
@@ -30,7 +35,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </Fragment>
+    </ThemeProvider>
   );
 }
 
