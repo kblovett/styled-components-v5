@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const sizeStyles = ({ size }) => {
   if (size === 'large') {
@@ -45,5 +46,10 @@ const Button = styled.button`
     color: #666;
   }
 `;
+
+Button.propTypes = {
+  size: PropTypes.string,
+  secondary: PropTypes.bool,
+};
 
 export { Button };
