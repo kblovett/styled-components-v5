@@ -1,5 +1,3 @@
-import { ThemeProvider } from 'styled-components';
-
 const theme = {
   id: 'light',
   primaryColor: '#f8049c',
