@@ -1,31 +1,38 @@
 import styled, { css } from 'styled-components';
 
+const sizeStyles = ({ size }) => {
+  if (size === 'large') {
+    return css`
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1.5em;
+    `;
+  } else {
+    return css`
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 1em;
+    `;
+  }
+};
+const buttonClass = (props) => {
+  if (props.secondary) {
+    return css`
+      color: ${(p) => p.theme.bodyFontColor};
+      background: ${(p) => p.theme.secondaryColor};
+    `;
+  } else {
+    return css`
+      color: ${(p) => p.theme.bodyFontColor};
+      background: ${(p) => p.theme.primaryColor};
+    `;
+  }
+};
+
 const Button = styled.button`
-  ${(props) =>
-    props.secondary
-      ? css`
-          color: white;
-          background: ${(p) => p.theme.secondaryColor};
-        `
-      : css`
-          color: white;
-          background: ${(p) => p.theme.primaryColor};
-        `}
-  ${(props) => {
-    if (props.size === 'large') {
-      return css`
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 1.5em;
-      `;
-    } else {
-      return css`
-        padding: 8px;
-        border-radius: 4px;
-        font-size: 1em;
-      `;
-    }
-  }}
+  ${buttonClass};
+  ${sizeStyles};
+  color: ${(p) => p.theme.bodyFontColor};
   font-weight: bold;
   box-shadow: none;
   border: none;
