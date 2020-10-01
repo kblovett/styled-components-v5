@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Link as ReactRouterDomLink, useLocation } from 'react-router-dom';
 
 import { Toggle } from 'components/common';
@@ -78,6 +78,7 @@ const StyledLink = styled(Link)`
 export function Header() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { id, setTheme } = useContext(ThemeContext);
 
   return (
     <HeaderWrapper>
@@ -93,7 +94,7 @@ export function Header() {
         <StyledLink isActive={pathname === '/login'} to='/login'>
           Login
         </StyledLink>
-        <Toggle />
+        <Toggle isActive={id === 'dark'} onToggle={setTheme} />
       </Menu>
     </HeaderWrapper>
   );
